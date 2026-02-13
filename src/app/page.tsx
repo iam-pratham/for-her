@@ -5,7 +5,6 @@ import BucketList from "@/components/sections/BucketList";
 import LoveLetter from "@/components/sections/LoveLetter";
 import Surprise from "@/components/sections/Surprise";
 import FloatingHearts from "@/components/effects/FloatingHearts";
-import MusicPlayer from "@/components/ui/MusicPlayer";
 
 export default function Home() {
   return (
@@ -23,8 +22,6 @@ export default function Home() {
       <LoveLetter />
 
       <Surprise />
-
-      <MusicPlayer />
 
       <footer className="text-center py-12 text-rose-400 text-sm font-light relative z-10 bg-white/50">
         <p>Made with all my love ❤️ for Manasi</p>

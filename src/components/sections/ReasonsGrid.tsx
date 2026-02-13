@@ -14,16 +14,18 @@ const reasons = [
 ];
 
 const ReasonCard = ({ reason, index }: { reason: string; index: number }) => {
+    const [isFlipped, setIsFlipped] = React.useState(false);
+
     return (
-        <motion.div
-            className="h-64 w-full cursor-pointer relative perspective-1000 group"
-            initial="front"
-            whileHover="back"
-            viewport={{ once: true }}
+        <div
+            className="h-64 w-full cursor-pointer relative perspective-1000"
+            onClick={() => setIsFlipped(!isFlipped)}
         >
             <motion.div
-                className="w-full h-full relative transition-all duration-700 transform-style-3d group-hover:[transform:rotateY(180deg)]"
+                className="w-full h-full relative transition-all duration-700 transform-style-3d"
                 style={{ transformStyle: "preserve-3d" }}
+                animate={{ rotateY: isFlipped ? 180 : 0 }}
+                transition={{ duration: 0.6 }}
             >
                 {/* Front Side */}
                 <div
@@ -38,7 +40,7 @@ const ReasonCard = ({ reason, index }: { reason: string; index: number }) => {
 
                 {/* Back Side */}
                 <div
-                    className="absolute inset-0 bg-gradient-to-br from-rose-400 to-pink-500 text-white rounded-3xl flex items-center justify-center p-8 text-center shadow-xl border border-rose-300 transform rotate-y-180"
+                    className="absolute inset-0 bg-gradient-to-br from-rose-400 to-pink-500 text-white rounded-3xl flex items-center justify-center p-8 text-center shadow-xl border border-rose-300"
                     style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
                 >
                     <p className="font-medium text-xl font-display leading-relaxed italic">
@@ -46,7 +48,7 @@ const ReasonCard = ({ reason, index }: { reason: string; index: number }) => {
                     </p>
                 </div>
             </motion.div>
-        </motion.div>
+        </div>
     );
 };
 
