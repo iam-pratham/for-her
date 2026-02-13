@@ -50,7 +50,7 @@ export default function Surprise() {
                     whileHover={{ scale: 1.1, rotate: [0, -5, 5, -5, 0] }}
                     whileTap={{ scale: 0.9 }}
                     onClick={handleSurprise}
-                    className="bg-gradient-to-r from-rose-500 to-pink-600 text-white px-8 py-4 md:px-10 md:py-5 rounded-full text-xl md:text-2xl font-bold shadow-2xl hover:shadow-rose-400/50 flex items-center gap-3 mx-auto"
+                    className="bg-gradient-to-r from-rose-500 to-pink-600 text-white px-10 py-5 rounded-full text-2xl font-bold shadow-2xl hover:shadow-rose-400/50 flex items-center gap-3 mx-auto"
                 >
                     <Gift size={32} />
                     <span>Click for a Surprise</span>
